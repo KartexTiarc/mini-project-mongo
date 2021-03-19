@@ -1,3 +1,4 @@
+  
 import os
 from flask import (
     Flask, flash, render_template,
@@ -67,7 +68,7 @@ def login():
                     return redirect(url_for(
                         "profile", username=session["user"]))
             else:
-                #invalid password match
+                # invalid password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
@@ -93,7 +94,7 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
-    #remove user from seission cookies
+    # remove user from seission cookies
     flash("You have been loggd out")
     session.pop("user")
     return redirect(url_for("login"))
